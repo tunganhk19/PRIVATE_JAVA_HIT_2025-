@@ -1,3 +1,5 @@
+package model;
+
 public class SmartPhone extends Product{
     private boolean has5G;
 

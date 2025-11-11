@@ -1,3 +1,5 @@
+package model;
+
 public class Laptop extends Product{
     private String ram;
     private String cpu;
