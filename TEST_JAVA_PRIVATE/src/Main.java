@@ -17,11 +17,6 @@ public class Main {
     public static List<Employee> list = new ArrayList<>();
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        list.add(new Developer("101","Thuong",22,10.0,new Device("101","Developer"),7));
-        list.add(new Tester("102","Hoa",20,11.0,new Device("102","Tester"),3));
-        list.add(new Developer("103","Hung",24,12.0,new Device("103","Developer"),5));
-        list.add(new Tester("104","Dat",23,13.0,new Device("104","Tester"),6));
-        list.add(new Developer("105","Tu",21,14.0,new Device("105","Developer"),4));
         int chose;
         do
         {
@@ -32,25 +27,20 @@ public class Main {
                     "4. Thoát\n");
             System.out.println("Lựa chọn của bạn?\n");
             chose = s.nextInt();
+            s.nextLine();
             switch (chose){
                 case 1:
-                    for (Employee x : new IEmployeeServicelmpl(list).getAllEmployees())
-                    {
-                        x.toString();
-                    }
+                    new IEmployeeServicelmpl().getAllEmployees();
                     break;
                 case 2:
                     System.out.println("\nNhập ID nhân viên: ");
                     String id = s.nextLine();
-                    new IEmployeeServicelmpl(list).getEmployeeByld(id).toString();
+                    new IEmployeeServicelmpl().getEmployeeByld(id);
                     break;
                 case 3:
                     System.out.println("\nNhập tên nhân viên: ");
                     String name = s.nextLine();
-                    for (Employee x : new IEmployeeServicelmpl(list).getEmployeeByName(name))
-                    {
-                        x.toString();
-                    }
+                    new IEmployeeServicelmpl().getEmployeeByName(name);
                     break;
                 case 4:
                     break;
